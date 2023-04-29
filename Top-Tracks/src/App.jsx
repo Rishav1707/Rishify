@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import TopTracks from "./TopTracks";
 import Login from "./Login";
 import Logout from "./Logout";
 import logo from "./assets/Rishify.png";
@@ -31,17 +32,23 @@ function App() {
       <h1>
         <img src={logo}></img>Rishify
       </h1>
-      <p>Get your top 5 tracks from the last 30 days</p>
       {!token ? (
-        <Login
-          client_id={client_id}
-          redirect_uri={redirect_uri}
-          auth_endpoint={auth_endpoint}
-          response={response}
-        />
+        <>
+          <p>Get your top 5 tracks from the last 30 days</p>
+          <Login
+            client_id={client_id}
+            redirect_uri={redirect_uri}
+            auth_endpoint={auth_endpoint}
+            response={response}
+          />
+        </>
       ) : (
-        <Logout setToken={setToken} />
+        <>
+          <p>Your top 5 tracks from the last 30 days</p>
+          <TopTracks />
+        </>
       )}
+      {token && <Logout setToken={setToken} />}
     </>
   );
 }

@@ -5,8 +5,8 @@ export default function Logout({ setToken }) {
     window.localStorage.removeItem("token");
   }
   return (
-    <>
-      <button onClick={logout}>LogOut</button>
-    </>
+    <div className="button">
+      <button onClick={logout}>Log out</button>
+    </div>
   );
 }

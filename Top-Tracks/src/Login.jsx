@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import icon from "./assets/icons.svg";
+
 export default function Login({
   client_id,
   redirect_uri,
@@ -9,8 +11,10 @@ export default function Login({
     window.location.href = `${auth_endpoint}client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response}`;
   }
   return (
-    <>
-      <button onClick={login}>Login Now</button>
-    </>
+    <div className="button">
+      <button onClick={login}>
+        <img src={icon}></img> Login
+      </button>
+    </div>
   );
 }

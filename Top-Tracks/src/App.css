@@ -1,8 +1,8 @@
 :root {
-  --background-color: #191414;
+  --background-color: #400073;
   --font-color: #ffffff;
-  --primary-color: #1db954;
-  --hover-color: #1ed760;
+  --song-color: #cbf55c;
+  --hover-color: #d8ff6e;
 }
 
 #root {
@@ -24,28 +24,63 @@ body {
 
 h1 {
   display: flex;
+  justify-content: center;
   font-size: 5em;
 }
 
 p {
   font-size: 20px;
-  color: #cbf55c;
+  font-weight: 700;
+}
+
+ol {
+  padding: 0;
+  margin-left: 1.5em;
+}
+
+li {
+  text-align: left;
+  padding: 0.5em;
+}
+
+.Song_list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Song_name {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--song-color);
+}
+
+.Artist_name {
+  font-size: 0.875em;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }
 
 button {
+  display: flex;
+  gap: 10px;
   margin: 5px;
   font-size: 1.2em;
-  border-radius: 8px;
+  border-radius: 2em;
   border: 2px solid transparent;
   padding: 0.6em 1.2em;
   font-weight: 500;
   font-family: inherit;
-  color: #000;
-  background-color: var(--primary-color);
+  color: var(--background-color);
+  background-color: var(--song-color);
   cursor: pointer;
 }
 
 button:hover,
 button:focus {
   background-color: var(--hover-color);
+  scale: 1.05;
 }
