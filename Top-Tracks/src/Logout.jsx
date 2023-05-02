@@ -2,7 +2,7 @@
 export default function Logout({ setToken }) {
   function logout() {
     setToken("");
-    window.localStorage.removeItem("token");
+    // window.localStorage.removeItem("token");
   }
   return (
     <div className="button">
