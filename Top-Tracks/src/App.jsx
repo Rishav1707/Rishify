@@ -5,6 +5,12 @@ import Logout from "./Logout";
 import logo from "./assets/Rishify.png";
 import "./App.css";
 
+const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize?";
+const RESPONSE = "token";
+const CLIENT_ID = "f9e4c56cb96e449cb94739383b54e32a";
+const SCOPE = "user-read-private user-read-email user-top-read";
+const REDIRECT_URI = "http://localhost:5173";
+
 function getToken() {
   return window.location.hash
     .substring(1)
@@ -36,7 +42,13 @@ function App() {
       {!token ? (
         <>
           <p>Get your top 5 tracks from the last 30 days</p>
-          <Login />
+          <Login
+            AUTH_ENDPOINT={AUTH_ENDPOINT}
+            RESPONSE={RESPONSE}
+            CLIENT_ID={CLIENT_ID}
+            SCOPE={SCOPE}
+            REDIRECT_URI={REDIRECT_URI}
+          />
         </>
       ) : (
         <>
