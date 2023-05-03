@@ -9,7 +9,7 @@ const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize?";
 const RESPONSE = "token";
 const CLIENT_ID = "f9e4c56cb96e449cb94739383b54e32a";
 const SCOPE = "user-read-private user-read-email user-top-read";
-const REDIRECT_URI = "http://localhost:5173";
+const REDIRECT_URI = "https://rishify.vercel.app/";
 
 function getToken() {
   return window.location.hash
